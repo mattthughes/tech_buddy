@@ -1,4 +1,40 @@
-# tech_buddy
-Code Institute Hackathon May 2025 #60
+# Tech Buddy
 
-Testing pull request
+### TEAM NAME: Support Squad – Your AI-powered family tech helper
+
+
+## **Table of Contents**
+* [**Tech Buddy**](#tech-buddy)
+* [**About the Submission**](#about-the-submission)
+    + [**Deployment**](#deployment)
+    + [**Goal**](#goal)
+    + [**Problem Statement**](#problem-statement)
+    + [**Objective(s)**](#objectives)
+    + [**Target Audience**](#target-audience)
+* [**AI Integration**](#ai-integration)
+* [**Pages**](#pages)
+* [**Tech Stack**](#tech-stack)
+    + [**Languages & Frameworks**](#languages--frameworks)
+    + [**Database**](#database)
+    + [**Authentication**](#authentication)
+    + [**Styling & Fonts**](#styling--fonts)
+    + [**Real-time Features**](#real-time-features)
+    + [**Deployment & Services**](#deployment--services)
+    + [**Development Tools**](#development-tools)
+    + [**Additional Libraries**](#additional-libraries)
+* [**Design**](#design)
+*  + [**Wireframe**](#wireframe)
+*   + [**UI/UX**](#UI/UX)
+    + [**Color Palette**](#color-palette)
+    + [**Typography**](#typography)
+* [**Future Development**](#future-development)
+    + [**Enhanced Matching Algorithm**](#future-development)
+    + [**Advanced Communication Features**](#advanced-communication-features)
+    + [**Profile Enhancements**](#profile-enhancements)
+    + [**Safety & Privacy**](#safety--privacy)
+    + [**User Experience**](#user-experience)
+    + [**Premium Features**](#premium-features)
+    + [**Community Features**](#community-features)
+* [**Credits**](#credits)
+* [**Testing**](#testing)
+* [**About Team**](#team)
