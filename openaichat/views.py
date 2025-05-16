@@ -40,6 +40,3 @@ def ai_chat_view(request):
         "user_message": user_message_text,
         "bot_message": bot_message_text,
         })
-
-
-
