@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="message" placeholder="Ask something..." required>
+    <button type="submit">Send</button>
+</form>
+{% if response %}
+    <div><strong>ChatGPT:</strong> {{ response }}</div>
+{% endif %}
