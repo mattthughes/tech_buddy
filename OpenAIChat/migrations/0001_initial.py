@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('UserProfile', '0001_initial'),
+        ('userprofile', '0001_initial'),
     ]
 
     operations = [
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('user_message', models.TextField()),
                 ('bot_message', models.TextField()),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
-                ('user_profile', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='UserProfile.userprofile')),
+                ('user_profile', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='userprofile.UserProfile')),
             ],
         ),
     ]

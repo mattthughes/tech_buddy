@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'tech_buddy',
     'django.contrib.staticfiles',
-    'OpenAIChat',
-    'UserProfile',
+    'openaichat',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
