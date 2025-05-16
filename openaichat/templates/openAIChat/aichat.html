@@ -8,9 +8,18 @@
         <option value="tekkie">Tekkie adult</option>
     </select>
     
-    <input type="text" name="message" placeholder="Ask something..." required>
+    <textarea name="message" placeholder="Ask something..." rows="4" required></textarea>
     <button type="submit">Send</button>
 </form>
-{% if response %}
-    <div><strong>ChatGPT:</strong> {{ response }}</div>
+{% if user_message and bot_message %}
+<div style="border: 1px solid #ccc; padding: 1em; margin-top: 1em; background-color: #f9f9f9; border-radius: 5px;">
+    <div style="margin-bottom: 0.5em;">
+        <strong>You:</strong><br>
+        {{ user_message|linebreaksbr }}
+    </div>
+    <div>
+        <strong>Robbie:</strong><br>
+        {{ bot_message|linebreaksbr }}
+    </div>
+</div>
 {% endif %}
