@@ -8,13 +8,14 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def ai_chat_view(request):
-    response_text = ""
+    user_message_text = None
+    bot_message_text = None
 
     if request.method == "POST":
-        message = request.POST.get("message")
+        user_message_text = request.POST.get("message").strip()
         category = request.POST.get("user_category")
 
-        if message and category:
+        if user_message_text and category:
             if category == "child":
                 tone = "Explain like I'm a 10-year-old."
             elif category == "non-tekkie":
@@ -22,20 +23,23 @@ def ai_chat_view(request):
             else:
                 tone = "Explain in a professional and technically detailed way."
 
-            full_prompt = f"{tone}\n\nQuestion: {message}"
+            full_prompt = f"{tone}\n\nUser message: {user_message_text}"
             try:
-                response = client.chat.completions.create(
+                bot_message = client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=[
                         {"role": "system", "content": "You are a helpful assistant."},
                         {"role": "user", "content": full_prompt},
                     ],
                 )
-                response_text = response.choices[0].message.content
+                bot_message_text = bot_message.choices[0].message.content
             except Exception as e:
-                response_text = f"Error: {e}"
+                bot_message_text = f"Error: {e}"
 
-    return render(request, "openAIChat/aichat.html", {"response": response_text})
+    return render(request, "openAIChat/aichat.html", {
+        "user_message": user_message_text,
+        "bot_message": bot_message_text,
+        })
 
 
 
