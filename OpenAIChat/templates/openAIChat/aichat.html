@@ -1,0 +1,16 @@
+<form method="post">
+    {% csrf_token %}
+
+    <select name="user_category" required>
+        <option value="" disabled selected>Choose a user category</option>
+        <option value="child">Child</option>
+        <option value="non-tekkie">Non-tekkie adult</option>
+        <option value="tekkie">Tekkie adult</option>
+    </select>
+    
+    <input type="text" name="message" placeholder="Ask something..." required>
+    <button type="submit">Send</button>
+</form>
+{% if response %}
+    <div><strong>ChatGPT:</strong> {{ response }}</div>
+{% endif %}
