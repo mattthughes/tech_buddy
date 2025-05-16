@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from UserProfile.models import UserProfile
+from userprofile.models import UserProfile
 
 class Message(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
