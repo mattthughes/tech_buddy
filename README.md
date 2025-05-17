@@ -4,6 +4,7 @@
 
 
 ## **Table of Contents**
+- * [**Tech Buddy**](#tech-buddy)
 - [Tech Buddy](#tech-buddy)
     - [TEAM NAME: Support Squad – Your AI-powered family tech helper](#team-name-support-squad--your-ai-powered-family-tech-helper)
   - [**Table of Contents**](#table-of-contents)
