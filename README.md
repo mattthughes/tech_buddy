@@ -98,3 +98,8 @@ Tech support from loved ones is usually just a call away but it can be stressful
 - CSS3
 - OpenAI 
 - Boostrap
+
+### **Database**
+-  [Postgres SQL](https://www.postgresql.org/)
+- 
+
