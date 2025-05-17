@@ -19,6 +19,9 @@
     - [**Languages \& Frameworks**](#languages--frameworks)
     - [**Database**](#database)
     - [**Authentication**](#authentication)
+    - [**Styling \& Fonts**](#styling--fonts)
+    - [**Real-time Features**](#real-time-features)
+    - [**Deployment \& Services**](#deployment--services)
 
 
 ## **About the Submission**
@@ -87,4 +90,17 @@ Tech support from loved ones is usually just a call away but it can be stressful
 ### **Authentication**
 
 - [django-allauth](https://docs.allauth.org/en/latest/)
+
+### **Styling & Fonts**
+
+
+
+### **Real-time Features**
+
+
+
+### **Deployment & Services**
+
+- Heroku
+- WhiteNoise 6.9.0 (static file serving)
 
