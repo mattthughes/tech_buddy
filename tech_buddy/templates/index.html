@@ -1,8 +1,21 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h2>Testing</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-4 d-flex flex-column ps-4">
+            <img alt="robot" src="{% static 'images/robot.png' %}">
+            <div class="d-flex flex-column align-items-center">
+            <p class="intro-paragraph">Meet Tech Buddy your AI Assistant. If you have a question Ask Below</p>
+            <button type="button" class="btn btn-success intro-button">Ask Question</button>
+        </div>
+        </div>
+        
+
+    </div>
+
+</div>
 
 {% endblock %}
