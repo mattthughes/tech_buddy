@@ -3,6 +3,10 @@
     background-color: #d5e9f2;
 }
 
+.icon {
+    padding-right: 5px;
+}
+
 .intro-paragraph {
     text-align: center;
 }
