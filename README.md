@@ -81,3 +81,7 @@ Tech support from loved ones is usually just a call away but it can be stressful
  - Create a family-friendly support environment
  - Offer reassurance and reduce tech frustration
 
+### **Target Audience**
+ - Elderly users (primary)
+ - Family members providing remote tech support
+ - Anyone seeking quick, easy help with minor tech issues
