@@ -84,6 +84,15 @@ Tech support from loved ones is usually just a call away but it can be stressful
  - Elderly users (primary)
  - Family members providing remote tech support
  - Anyone seeking quick, easy help with minor tech issues
+   
+### **AI Integration**
+**How AI Is Used in Tech Buddy**;
+Tech Buddy leverages AI to simulate a friendly, knowledgeable tech support assistant. Here's how:
+ - Natural Language Understanding :Users can type issues in their own words (e.g., "How do I reset my password?"), and the AI interprets the intent and keywords to provide relevant help.
+ - AI-Powered Suggestions:
+  The system returns tailored responses either from:
+    * A pre-trained natural language model from OpenAI’s 
+- Empathetic Tone Generation: AI-generated responses are phrased in a friendly, reassuring way — ideal for calming users who may be frustrated or confused.
 
 ## **Pages**
 
@@ -111,7 +120,7 @@ Tech support from loved ones is usually just a call away but it can be stressful
 
 
 ### **Real-time Features**
-
+ - AI chat simulation
 
 
 ### **Deployment & Services**
@@ -131,5 +140,12 @@ Tech support from loved ones is usually just a call away but it can be stressful
 ### **Email Provider**
 
 ## **Design**
+
+## **Wireframes**
+
+### UI/UX
+### **Color Palette**
+
+### **Typography**
 
 ### **Color Palette**
