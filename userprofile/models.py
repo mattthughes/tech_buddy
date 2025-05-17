@@ -21,15 +21,26 @@ class Family(models.Model):
 
 
 class UserProfile(models.Model):
+
+    USER_TYPE_CHOICES = (
+        ('facilitator', 'Facilitator'),
+        ('family_member', 'Family Member'),
+    )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     family = models.ForeignKey(
         Family,
-        on_delete=models.SET_NULL,
+        on_delete=models.PROTECT,  # All users must have a family!
         null=True,
-        blank=True
+        blank=True,
     )
     dob = models.DateField(null=True, blank=True)
     tech_level = models.CharField(max_length=10, choices=TECH_LEVELS)
+    user_type = models.CharField(
+        max_length=20,
+        choices=USER_TYPE_CHOICES,
+        default='family_member'
+    )
 
     def __str__(self):
         return self.user.username
