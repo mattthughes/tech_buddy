@@ -22,6 +22,7 @@
     - [**Styling \& Fonts**](#styling--fonts)
     - [**Real-time Features**](#real-time-features)
     - [**Deployment \& Services**](#deployment--services)
+    - [**Development Tools**](#development-tools)
 
 
 ## **About the Submission**
@@ -81,7 +82,7 @@ Tech support from loved ones is usually just a call away but it can be stressful
 - HTML5
 - CSS3
 - OpenAI 
-- Boostrap
+- Boostrap v5.3
 
 ### **Database**
 -  [Postgres SQL](https://www.postgresql.org/)
@@ -104,3 +105,8 @@ Tech support from loved ones is usually just a call away but it can be stressful
 - Heroku
 - WhiteNoise 6.9.0 (static file serving)
 
+### **Development Tools**
+
+- Git & GitHub for version control
+- VS Code IDE
+- python-dotenv for environment variable management
