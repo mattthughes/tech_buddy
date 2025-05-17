@@ -37,7 +37,8 @@
 * [**Credits**](#credits)
 * [**Testing**](#testing)
 * [**About Team**](#team)
-
+* [**Summary**](#summary)
+  
 ## **About the Submission**
 
 ### **Overview** 
