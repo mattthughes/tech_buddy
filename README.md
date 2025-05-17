@@ -144,8 +144,53 @@ Tech Buddy leverages AI to simulate a friendly, knowledgeable tech support assis
 ## **Wireframes**
 
 ### UI/UX
+ - Large, legible fonts and high-contrast UI for accessibility
+ - Simple layouts with step-by-step guidance
+ - Large buttons and readable fonts
+ - Minimal interface distractions
+ - Option for dark/light mode toggle
+ - Icons + Text for clarity
+
 ### **Color Palette**
 
 ### **Typography**
 
-### **Color Palette**
+## **Future Development**
+
+### **Enhanced Matching Algorithm**
+
+ - AI model finetuned on family support scenarios
+ - Handle ambiguous or emotional queries better
+
+### **Advanced Communication Features**
+
+ - Live video support
+ - Screen-sharing tools for remote help
+
+### **Profile Enhancements**
+
+ - User history of previous tech issues
+
+### **Safety & Privacy**
+
+ - No data stored without permission
+ - Clear consent prompts for family contact
+
+### **User Experience**
+
+- Mobile app development
+- Dark mode implementation
+- Accessibility improvements
+- Custom notification preferences
+
+### **Premium Features**
+ - Customize responses with family member voice
+
+### **Community Features**
+ - Elderly tech community Q&A
+ - Share your own solutions
+
+
+## **Testing**
+
+Details of testing are included in a separate file [TESTING.md](TESTING.md).
