@@ -4,40 +4,21 @@
 
 
 ## **Table of Contents**
-* [**Tech Buddy**](#tech-buddy)
-* [**About the Submission**](#about-the-submission)
-    + [**Deployment**](#deployment)
-    + [**Goal**](#goal)
-    + [**Problem Statement**](#problem-statement)
-    + [**Objective(s)**](#objectives)
-    + [**Target Audience**](#target-audience)
-* [**AI Integration**](#ai-integration)
-* [**Pages**](#pages)
-* [**Tech Stack**](#tech-stack)
-    + [**Languages & Frameworks**](#languages--frameworks)
-    + [**Database**](#database)
-    + [**Authentication**](#authentication)
-    + [**Styling & Fonts**](#styling--fonts)
-    + [**Real-time Features**](#real-time-features)
-    + [**Deployment & Services**](#deployment--services)
-    + [**Development Tools**](#development-tools)
-    + [**Additional Libraries**](#additional-libraries)
-* [**Design**](#design)
-*  + [**Wireframe**](#wireframe)
-*   + [**UI/UX**](#UI/UX)
-    + [**Color Palette**](#color-palette)
-    + [**Typography**](#typography)
-* [**Future Development**](#future-development)
-    + [**Enhanced Matching Algorithm**](#future-development)
-    + [**Advanced Communication Features**](#advanced-communication-features)
-    + [**Profile Enhancements**](#profile-enhancements)
-    + [**Safety & Privacy**](#safety--privacy)
-    + [**User Experience**](#user-experience)
-    + [**Premium Features**](#premium-features)
-    + [**Community Features**](#community-features)
-* [**Credits**](#credits)
-* [**Testing**](#testing)
-* [**About Team**](#team)
+- [Tech Buddy](#tech-buddy)
+    - [TEAM NAME: Support Squad – Your AI-powered family tech helper](#team-name-support-squad--your-ai-powered-family-tech-helper)
+  - [**Table of Contents**](#table-of-contents)
+  - [**About the Submission**](#about-the-submission)
+    - [**Overview**](#overview)
+    - [**Deployment**](#deployment)
+    - [**Goal**](#goal)
+    - [**Problem Statement**](#problem-statement)
+    - [**Objective(s)**](#objectives)
+    - [**Target Audience**](#target-audience)
+  - [**Pages**](#pages)
+  - [**Tech Stack**](#tech-stack)
+    - [**Languages \& Frameworks**](#languages--frameworks)
+    - [**Database**](#database)
+    - [**Authentication**](#authentication)
 
 
 ## **About the Submission**
@@ -102,4 +83,8 @@ Tech support from loved ones is usually just a call away but it can be stressful
 ### **Database**
 -  [Postgres SQL](https://www.postgresql.org/)
 - 
+
+### **Authentication**
+
+- [django-allauth](https://docs.allauth.org/en/latest/)
 
