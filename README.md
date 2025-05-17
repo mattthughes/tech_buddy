@@ -85,3 +85,16 @@ Tech support from loved ones is usually just a call away but it can be stressful
  - Elderly users (primary)
  - Family members providing remote tech support
  - Anyone seeking quick, easy help with minor tech issues
+
+## **Pages**
+
+## **Tech Stack**
+
+### **Languages & Frameworks**
+- Python 3.11
+- Django 5.1.6
+- JavaScript
+- HTML5
+- CSS3
+- OpenAI 
+- Boostrap
