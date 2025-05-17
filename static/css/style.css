@@ -10,3 +10,31 @@
     width: fit-content;
     height: fit-content;
 }
+
+
+.common-questions-header {
+    position: absolute;
+    right: 20%;
+    top: 5%;
+    margin-top: 15px;
+    
+}
+
+.common-questions-table {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    border: 1px solid;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-top: 20px;
+}
+
+table {
+    width: 50%;
+}
+
+td:first-child {
+      border-right: 2px solid #000000;
+      border-left: 2px solid #000000;
+    }
