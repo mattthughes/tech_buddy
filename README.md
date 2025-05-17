@@ -23,7 +23,11 @@
     - [**Real-time Features**](#real-time-features)
     - [**Deployment \& Services**](#deployment--services)
     - [**Development Tools**](#development-tools)
-
+    - [**Additional Libraries**](#additional-libraries)
+    - [**Email Provider**](#email-provider)
+  - [**Design**](#design)
+    - [**Color Palette**](#color-palette)
+  
 
 ## **About the Submission**
 
@@ -77,7 +81,7 @@ Tech support from loved ones is usually just a call away but it can be stressful
 
 ### **Languages & Frameworks**
 - Python 3.11
-- Django 5.1.6
+- Django 5.2.1
 - JavaScript
 - HTML5
 - CSS3
@@ -110,3 +114,12 @@ Tech support from loved ones is usually just a call away but it can be stressful
 - Git & GitHub for version control
 - VS Code IDE
 - python-dotenv for environment variable management
+
+### **Additional Libraries**
+
+
+### **Email Provider**
+
+## **Design**
+
+### **Color Palette**
