@@ -1,3 +1,121 @@
 .nav {
-    background-color: #6562df;
+    background-color: #d5e9f2;
+}
+
+.intro-paragraph {
+    text-align: center;
+}
+
+.intro-button {
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Styling for signup form */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 40px 30px;
+    gap: 48px;
+}
+
+.register-form-section {
+    max-width: 350px;
+    flex: 1;
+}
+
+/* Styling for form header */
+.register-form-section h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    text-align: left;
+}
+
+.register-subtitle {
+    margin-bottom: 1.2rem;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.register-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.register-form-section label {
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+    text-align: left;
+}
+
+.register-form-section input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.register-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Styling for forms image placement */
+.register-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-image-section img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+    .register-container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 95vw;
+        padding: 24px 8px;
+        gap: 20px;
+    }
+    .register-form-section {
+        max-width: 100%;
+        width: 100%;
+    }
+    .register-image-section {
+        width: 100%;
+        justify-content: center;
+    }
+    .register-image-section img {
+        margin: 0 auto;
+        max-width: 160px;
+    }
+}
+
+/* Hide image on very small screens */
+@media (max-width: 480px) {
+    .register-image-section {
+        display: none;
+    }
 }

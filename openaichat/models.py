@@ -18,11 +18,22 @@ class Message(models.Model):
     conversation = models.ForeignKey(
         Conversation,
         on_delete=models.CASCADE,
-        related_name="messages"
+        related_name="messages",
+        null=True,
+        blank=True,
     )
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
     # This needs to be a permanent snapshot
-    tech_level = models.CharField(max_length=10)
+    tech_level = models.CharField(
+        max_length=10,
+        null=True,
+        blank=True,
+    )
     user_message = models.TextField()
     bot_message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
