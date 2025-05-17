@@ -38,3 +38,20 @@
 * [**Credits**](#credits)
 * [**Testing**](#testing)
 * [**About Team**](#team)
+
+
+## **About the Submission**
+
+### **Overview** 
+We all have that one relative (maybe a parent or grandparent) who calls when something isn’t working on their phone, laptop, or TV. Tech Buddy is our attempt to make that experience easier for everyone.
+
+It’s a simple, AI-powered web app where family members—especially elderly ones—can type out their tech problems in everyday language. Whether it’s “Can you fix my phone? It’s not charging.” “How do I transfer money on this app?” or “How do I reset my password?” — Tech Buddy gives them instant, easy-to-follow help.
+
+We designed this to feel personal, clear, and approachable. It’s like having a patient tech-savvy friend available 24/7, without needing to make a call or wait for someone to stop by. And for peace of mind, family members can still get updates or stay connected.
+
+
+### **Deployment**
+
+[Deployed link]()
+
+[Kanban board]()
