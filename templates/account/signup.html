@@ -5,14 +5,15 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-<div class="register-container">
-    <div class="register-form-section">
+<div class="signup-login-container">
+    <div class="signup-login-form-section">
     <!-- Header -->
         <h1>Create New Account</h1>
         <!-- Link to Login Page -->
-        <p class="register-subtitle">
+        <p class="signup-login-subtitle">
             Already Registered? <a href="{{ login_url }}">Login</a>
         </p>
+        <!-- Keep if social account will be implemented in the future -->
         {% if not SOCIALACCOUNT_ONLY %}
             {% url 'account_signup' as action_url %}
             <!-- Signup Form -->
@@ -24,13 +25,13 @@
                 {% endfor %}
                 {{ redirect_field }}
                 <!-- Signup Button -->
-                <button type="submit" class="register-btn">Sign Up</button>
+                <button type="submit" class="signup-login-btn">Sign Up</button>
             </form>
         {% endif %}
     </div>
-    <div class="register-image-section">
+    <div class="signup-login-image-section">
         <!-- Robot Image -->
-        <img src="{% static 'images/robot.png' %}" alt="Signup Illustration" />
+        <img src="{% static 'images/robot.png' %}" alt="Picture Of Robot" />
     </div>
 </div>
 {% endblock content %}
