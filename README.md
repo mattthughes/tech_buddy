@@ -73,8 +73,11 @@ Tech support from loved ones is usually just a call away but it can be stressful
  - Many elderly people struggle with day-to-day tech They often rely on tech-savvy relatives for help, which can be inconvenient and stressful for both sides.
  - Over-the-phone or message-based support can be confusing and lacks context, leading to frustration or giving up.
  - There’s a need for an easy-to-use, friendly tool that offers clear, accessible tech help anytime.
- - Get helpful responses powered by AI.
+ - Get helpful responses powered by AI
 
-
-
+### **Objective(s)**
+ - Simplify tech support for older or less tech-savvy users
+ - Provide fast, understandable solutions to common problems
+ - Create a family-friendly support environment
+ - Offer reassurance and reduce tech frustration
 
