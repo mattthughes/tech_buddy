@@ -22,10 +22,9 @@ class CustomSignupForm(SignupForm):
         label="Last Name",
         required=True
     )
-    family = forms.ModelChoiceField(
-        queryset=Family.objects.all(),
-        label="Family",
-        empty_label="Select a family",
+    family = forms.CharField(
+        max_length=100,
+        label="Family Name",
         required=True
     )
     tech_level = forms.ChoiceField(
@@ -46,14 +45,20 @@ class CustomSignupForm(SignupForm):
             del self.fields['email']
 
     def save(self, request):
+        # Save the user
         user = super().save(request)
         user.username = self.cleaned_data['username']
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.save()
 
+        # Create a new family
+        family_name = self.cleaned_data['family']
+        family = Family.objects.create(name=family_name)
+
+        # Create or get a UserProfile linked to this user
         profile, created = UserProfile.objects.get_or_create(user=user)
-        profile.family = self.cleaned_data['family']
+        profile.family = family
         profile.tech_level = self.cleaned_data['tech_level']
         profile.dob = self.cleaned_data['date_of_birth']
         profile.user_type = 'facilitator'
