@@ -4,14 +4,12 @@ from django.shortcuts import render, redirect
 from .models import Conversation, Message
 from userprofile.models import UserProfile
 from django.contrib.auth.decorators import login_required
-from django.utils.text import Truncator
 import os
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-@login_required
 @login_required
 def ai_chat_view(request):
     user_message_text = None
@@ -26,7 +24,7 @@ def ai_chat_view(request):
     if request.method == "POST":
         user_message_text = request.POST.get("message", "").strip()
 
-        # Determine the tone based on user profile
+        # Validate and get the UserProfile
         if user_profile.age is not None and user_profile.age < 16:
             tone = f"Explain like I'm a {user_profile.age}-year-old."
         else:
@@ -38,7 +36,7 @@ def ai_chat_view(request):
             else:  # high
                 tone = "Explain in a professional and technically detailed way."  # noqa: E501
 
-        # Retrieve or create a conversation
+        # Get or create a conversation
         conversation_id = request.session.get("conversation_id")
         if conversation_id:
             try:
@@ -48,61 +46,53 @@ def ai_chat_view(request):
                 )
             except Conversation.DoesNotExist:
                 conversation = None
-        print(
-            f"DEBUG| conversation: "
-            f"{conversation}, user_profile: {user_profile}"
-        )
-        print(
-            f"DEBUG| Condition 'not conversation and user_profile' evaluates "
-            f"to: {not conversation and user_profile}"
-        )
+
         if not conversation and user_profile:
-            # Generate a title from the user's message
-            title = Truncator(user_message_text).chars(50)
             conversation = Conversation.objects.create(
-                user_profile=user_profile,
-                title=title
+                user_profile=user_profile
             )
             request.session["conversation_id"] = conversation.id
-            print(f"DEBUG| Conversation title: '{conversation.title}'")
 
-        # Build conversation history
-        chat_history = [{
-            "role": "system",
-            "content": "You are a helpful assistant."
-        }]
-        for msg in conversation.messages.order_by("timestamp"):
+            # Build conversation history
+            chat_history = [{
+                "role": "system",
+                "content": "You are a helpful assistant."
+            }]
+            for msg in conversation.messages.order_by("timestamp"):
+                chat_history.append({
+                    "role": "user",
+                    "content": msg.user_message
+                })
+                chat_history.append({
+                    "role": "assistant",
+                    "content": msg.bot_message
+                })
+
             chat_history.append({
                 "role": "user",
-                "content": msg.user_message
-            })
-            chat_history.append({
-                "role": "assistant",
-                "content": msg.bot_message
+                "content": f"{tone}\n\n{user_message_text}"
             })
 
-        chat_history.append({
-            "role": "user",
-            "content": f"{tone}\n\n{user_message_text}"
-        })
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    messages=chat_history
+                )
+                print("DEBUG| OpenAI response object:", response)
+                bot_message_text = response.choices[0].message.content
 
-        try:
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=chat_history
-            )
-            bot_message_text = response.choices[0].message.content
+                # Save message
+                Message.objects.create(
+                    conversation=conversation,
+                    user_profile=user_profile,
+                    tech_level=user_profile.tech_level,
+                    user_message=user_message_text,
+                    bot_message=bot_message_text
+                )
+            except Exception as e:
+                bot_message_text = f"Error: {e}"
 
-            # Save message
-            Message.objects.create(
-                conversation=conversation,
-                user_profile=user_profile,
-                tech_level=user_profile.tech_level,
-                user_message=user_message_text,
-                bot_message=bot_message_text
-            )
-        except Exception as e:
-            bot_message_text = f"Error: {e}"
+    print("DEBUG| Final bot_message_text:", repr(bot_message_text))
 
     return render(request, "openAIChat/aichat.html", {
         "user_message": user_message_text,
