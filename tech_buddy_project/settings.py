@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'tech_buddy',
+    'fontawesomefree',
     'django.contrib.staticfiles',
     'openaichat',
     'userprofile',
@@ -63,6 +64,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tech_buddy_project.urls'
 
+LOGIN_REDIRECT_URL = '/aichat/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/aichat/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,7 +86,6 @@ TEMPLATES = [
 ACCOUNT_FORMS = {
     'signup': 'userprofile.forms.CustomSignupForm',
 }
-
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`

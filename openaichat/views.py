@@ -1,37 +1,40 @@
 from openai import OpenAI
 from dotenv import load_dotenv
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Conversation, Message
 from userprofile.models import UserProfile
+from django.contrib.auth.decorators import login_required
 import os
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
+@login_required
 def ai_chat_view(request):
     user_message_text = None
     bot_message_text = None
     conversation = None
-    user_profile = None
+
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        return redirect('profile_setup')
 
     if request.method == "POST":
-        dummy_user = request.POST.get("dummy_user")
         user_message_text = request.POST.get("message", "").strip()
-        category = request.POST.get("user_category")
 
         # Validate and get the UserProfile
-        if dummy_user:
-            try:
-                user_profile = UserProfile.objects.get(
-                    user__username__iexact=dummy_user
-                )
-            except UserProfile.DoesNotExist:
-                bot_message_text = f"No profile found for user '{dummy_user}'."
-                return render(request, "openAIChat/aichat.html", {
-                    "user_message": user_message_text,
-                    "bot_message": bot_message_text,
-                })
+        if user_profile.age is not None and user_profile.age < 16:
+            tone = f"Explain like I'm a {user_profile.age}-year-old."
+        else:
+            tech_level = user_profile.tech_level
+            if tech_level == "low":
+                tone = "Explain simply and clearly for a non-technical adult."
+            elif tech_level == "medium":
+                tone = "Explain with moderate technical detail."
+            else:  # high
+                tone = "Explain in a professional and technically detailed way."  # noqa: E501
 
         # Get or create a conversation
         conversation_id = request.session.get("conversation_id")
@@ -49,15 +52,6 @@ def ai_chat_view(request):
                 user_profile=user_profile
             )
             request.session["conversation_id"] = conversation.id
-
-        if user_message_text and category and user_profile:
-            # Determine tone
-            if category == "child":
-                tone = "Explain like I'm a 10-year-old."
-            elif category == "non-techie":
-                tone = "Explain simply and clearly for a non-technical adult."
-            else:
-                tone = "Explain in a professional and technically detailed way."  # noqa: E501
 
             # Build conversation history
             chat_history = [{
@@ -84,6 +78,7 @@ def ai_chat_view(request):
                     model="gpt-3.5-turbo",
                     messages=chat_history
                 )
+                print("DEBUG| OpenAI response object:", response)
                 bot_message_text = response.choices[0].message.content
 
                 # Save message
@@ -96,6 +91,8 @@ def ai_chat_view(request):
                 )
             except Exception as e:
                 bot_message_text = f"Error: {e}"
+
+    print("DEBUG| Final bot_message_text:", repr(bot_message_text))
 
     return render(request, "openAIChat/aichat.html", {
         "user_message": user_message_text,

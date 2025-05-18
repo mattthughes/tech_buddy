@@ -51,9 +51,9 @@ We designed this to feel personal, clear, and approachable. It’s like having a
 
 ### **Deployment**
 
-[Deployed link](?)
+[Deployed link](https://support-squad-tech-buddy-9d4a4ad47301.herokuapp.com/)
 
-[Kanban board](?)
+[Kanban board](https://github.com/users/apeskinian/projects/9/views/1)
 
 ### **Goal**
 **Tech Buddy** was created with real people in mind — especially those who didn’t grow up with technology but still need to use it every day. Here’s what we hope to achieve with this project:
