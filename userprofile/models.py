@@ -9,6 +9,11 @@ TECH_LEVELS = [
     ("low", "Low"),
 ]
 
+USER_TYPE_CHOICES = [
+        ('facilitator', 'Facilitator'),
+        ('family_member', 'Family Member'),
+]
+
 
 class Family(models.Model):
     name = models.CharField(max_length=100)
@@ -21,12 +26,6 @@ class Family(models.Model):
 
 
 class UserProfile(models.Model):
-
-    USER_TYPE_CHOICES = (
-        ('facilitator', 'Facilitator'),
-        ('family_member', 'Family Member'),
-    )
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     family = models.ForeignKey(
         Family,
