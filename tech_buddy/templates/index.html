@@ -8,7 +8,7 @@
         <div class="col-12 col-xl-4 d-flex flex-column ps-4">
             <img class="border pt-1" alt="robot" src="{% static 'images/robot.png' %}">
             <div class="d-flex flex-column align-items-center m-2">
-                {% if user.is_authenicated %}
+                {% if user.is_authenticated %}
                 <p class="intro-paragraph">Meet Tech Buddy your Family AI Assistant.</p>
                 <a href="{% url 'aichat' %}" class="btn btn-success intro-button">Talk to Buddy</a>
                 {% else %}
