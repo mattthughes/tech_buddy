@@ -54,6 +54,11 @@
                         </li>
                         {% endif %}
                     </ul>
+                    {% if user.is_authenticated %}
+                        {% with user.first_name|default:user.username as display_name %}
+                         Hi {{ display_name }} | {{ user.userprofile.family.name }} family
+                        {% endwith %}
+                    {% endif %}
                 </div>
             </div>
         </nav>
