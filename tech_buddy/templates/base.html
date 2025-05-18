@@ -40,7 +40,7 @@
                             <a class="nav-link" href="#"><i class="fa-solid fa-circle-info icon"></i>About</a>
                         </li>
 
-                        {% if user.is_authenicated %}
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket icon"></i>Logout</a>
                         </li>
