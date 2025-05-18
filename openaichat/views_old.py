@@ -124,11 +124,12 @@ def ai_chat_view(request):
     print("DEBUG| Final bot_message_text:", repr(bot_message_text))
 
     messages = []
+
     if conversation:
         messages = conversation.messages.order_by("timestamp")
 
     return render(request, "openAIChat/aichat.html", {
-        "messages": messages,
         "user_message": user_message_text,
         "bot_message": bot_message_text,
+        "messages": messages,  # pass messages to template
     })
