@@ -254,7 +254,7 @@ python manage.py runserver
 * Black: #000000 (Used for text and borders)
 
   
-- ThE color scheme creates a modern, professional look that's  
+- The color scheme creates a modern, professional look that's  
    - Maintains good contrast for accessibility
    - Uses a consistent blue theme throughout
    - Keeps the interface clean and uncluttered  
