@@ -23,10 +23,10 @@ class CustomSignupForm(SignupForm):
         required=True
     )
     family = forms.ModelChoiceField(
-    queryset=Family.objects.all(),
-    label="Family",
-    empty_label="Select a family",
-    required=True
+        queryset=Family.objects.all(),
+        label="Family",
+        empty_label="Select a family",
+        required=True
     )
     tech_level = forms.ChoiceField(
         choices=TECH_LEVELS,
