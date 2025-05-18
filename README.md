@@ -37,7 +37,8 @@
 * [**Credits**](#credits)
 * [**Testing**](#testing)
 * [**About Team**](#team)
-
+* [**Summary**](#summary)
+  
 ## **About the Submission**
 
 ### **Overview** 
@@ -83,6 +84,15 @@ Tech support from loved ones is usually just a call away but it can be stressful
  - Elderly users (primary)
  - Family members providing remote tech support
  - Anyone seeking quick, easy help with minor tech issues
+   
+### **AI Integration**
+**How AI Is Used in Tech Buddy**;
+Tech Buddy leverages AI to simulate a friendly, knowledgeable tech support assistant. Here's how:
+ - Natural Language Understanding :Users can type issues in their own words (e.g., "How do I reset my password?"), and the AI interprets the intent and keywords to provide relevant help.
+ - AI-Powered Suggestions:
+  The system returns tailored responses either from:
+    * A pre-trained natural language model from OpenAI’s 
+- Empathetic Tone Generation: AI-generated responses are phrased in a friendly, reassuring way — ideal for calming users who may be frustrated or confused.
 
 ## **Pages**
 
@@ -110,7 +120,7 @@ Tech support from loved ones is usually just a call away but it can be stressful
 
 
 ### **Real-time Features**
-
+ - AI chat simulation
 
 
 ### **Deployment & Services**
@@ -131,4 +141,56 @@ Tech support from loved ones is usually just a call away but it can be stressful
 
 ## **Design**
 
+## **Wireframes**
+
+### UI/UX
+ - Large, legible fonts and high-contrast UI for accessibility
+ - Simple layouts with step-by-step guidance
+ - Large buttons and readable fonts
+ - Minimal interface distractions
+ - Option for dark/light mode toggle
+ - Icons + Text for clarity
+
 ### **Color Palette**
+
+### **Typography**
+
+## **Future Development**
+
+### **Enhanced Matching Algorithm**
+
+ - AI model finetuned on family support scenarios
+ - Handle ambiguous or emotional queries better
+
+### **Advanced Communication Features**
+
+ - Live video support
+ - Screen-sharing tools for remote help
+
+### **Profile Enhancements**
+
+ - User history of previous tech issues
+
+### **Safety & Privacy**
+
+ - No data stored without permission
+ - Clear consent prompts for family contact
+
+### **User Experience**
+
+- Mobile app development
+- Dark mode implementation
+- Accessibility improvements
+- Custom notification preferences
+
+### **Premium Features**
+ - Customize responses with family member voice
+
+### **Community Features**
+ - Elderly tech community Q&A
+ - Share your own solutions
+
+
+## **Testing**
+
+Details of testing are included in a separate file [TESTING.md](TESTING.md).
