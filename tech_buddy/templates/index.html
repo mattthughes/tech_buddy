@@ -8,7 +8,7 @@
         <div class="col-12 col-xl-4 d-flex flex-column ps-4">
             <img class="border pt-1" alt="robot" src="{% static 'images/robot.png' %}">
             <div class="d-flex flex-column align-items-center m-2">
-                {% if user.is_authenicated %}
+                {% if user.is_authenticated %}
                 <p class="intro-paragraph">Meet Tech Buddy your Family AI Assistant.</p>
                 <a href="{% url 'aichat' %}" class="btn btn-success intro-button">Talk to Buddy</a>
                 {% else %}
@@ -16,8 +16,8 @@
                     digital world with ease. To get started, please log in to your account—or, if you're new here, take
                     a moment to register. Creating an account gives you access to your helpful AI, ready to assist you
                     in solving real problems and making technology simpler for everyone in your household.</p>
-                <a href="#" class="btn btn-success intro-button m-2">Sign Up</a>
-                <a href="#" class="btn btn-success intro-button">Login</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-success intro-button m-2">Sign Up</a>
+                <a href="{% url 'account_login' %}" class="btn btn-success intro-button">Login</a>
                 {% endif %}
             </div>
         </div>
