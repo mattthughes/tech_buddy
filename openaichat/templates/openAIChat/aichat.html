@@ -1,6 +1,3 @@
-
-
-
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Home{% endblock %}
@@ -20,120 +17,70 @@
     .chat-box {
       height: calc(78vh - 150px);
       overflow-y: auto;
-      padding: 20px;
-      background-color: #fff;
-    }
-    .chat-input {
-                 /* position: absolute; */
-      bottom: 0;
-      width: 100%;
-      padding: 20px;
-      background: #f8f9fa;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+        padding: 20px;
+        background-color: #fff;
+      }
+      .chat-input {
+                  /* position: absolute; */
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #ddd;
+      }
+    </style>
 
-  <div class="container-fluid">
-  <div class="row">
+    <div class="container-fluid">
+      <div class="row">
 
-    <!-- Sidebar for History -->
-    <div class="col-3 sidebar p-3">
-      <h5>Chat History</h5>
-      <ul class="list-group" id="historyList">
-        <li class="list-group-item">Who are you?</  li>
-        <li class="list-group-item">What is AI?</li>
-        <li class="list-group-item">How do I reset my password?</li>
-        <li class="list-group-item">What’s the weather today?</li>
-        <li class="list-group-item">Can you tell me a joke?</li>
-      </ul>
-    </div>
+        <!-- Sidebar for History -->
+        <div class="col-3 sidebar p-3">
+          <h5>Chat History</h5>
+          <ul class="list-group" id="historyList">
+            <li class="list-group-item">Who are you?</li>
+            <li class="list-group-item">What is AI?</li>
+            <li class="list-group-item">How do I reset my password?</li>
+            <li class="list-group-item">What’s the weather today?</li>
+            <li class="list-group-item">Can you tell me a joke?</li>
+          </ul>
+        </div>
 
-    <!-- Main Chat Area -->
-    <div class="col-9 position-relative">
+        <!-- Main Chat Area -->
+        <div class="col-9 position-relative">
 
-      <div class="p-3">
-        <h4>You're in the <strong>Tech buddy</strong> chatroom</h4>
-        <!-- Select Boxes -->
-        <div class="row mb-3">
-          <div class="col">
-            <label class="form-label">Who am I talking to?</label>
-            <select class="form-select"  name="dummy_user" id="dummy_user" required>
-                <option value="" disabled selected>Select your name</option>
-                <option value="Anne">Anne</option>
-                <option value="Jack">Jack</option>
-                <option value="Cho">Cho</option>
-            </select>
+          <div class="p-3">
+            <h4>You're in the <strong>Tech buddy</strong> chatroom</h4>
           </div>
-          <div class="col">
-            <label class="form-label" for="user_category">What age group do you fall into?:</label>
-            <select class="form-select" name="user_category" id="user_category" required>
-                <option value="" disabled selected>Choose a user category</option>
-                <option value="child">Child</option>
-                <option value="non-techie">Non-techie adult</option>
-                <option value="techie">Techie adult</option>
-            </select>
+          
+          <!-- Chat Display Area -->
+          <div class="chat-box" id="chatBox">
+            <!-- Chat messages will appear here -->
+             {% if user_message and bot_message %}
+            <div class="mb-3">
+              <div class="alert alert-secondary">
+                <strong>You:</strong><br>
+                {{ user_message|linebreaksbr }}
+              </div>
+              <div class="alert alert-success">
+                <strong>Buddy:</strong><br>
+                {{ bot_message|linebreaksbr }}
+              </div>
+            </div>
+            {% endif %}
+          </div>        
+
+          <div class="p-3">
+            <form method="post">
+              {% csrf_token %}
+              <div class="chat-input d-flex">
+                <input type="text" name="message" id="userInput" class="form-control me-2" placeholder="Type your message..." required>
+                <button type="submit" class="btn btn-success intro-button">Send</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
-      <!-- Chat Display Area -->
-      <div class="chat-box" id="chatBox">
-        <!-- Chat messages will appear here -->
-      </div>        
-
-      <!-- Chat Input -->
-      <div class="chat-input d-flex">
-        <input type="text" id="userInput" class="form-control me-2" placeholder="Type your message...">
-        <button class="btn btn-success intro-button" onclick="sendMessage()">Send</button>
-        
-      </div>
-
     </div>
-
   </div>
-</div>  
-
-
-<form method="post">
-    {% csrf_token %}
-
-    <!-- Dummy user selector -->
-    <label for="dummy_user">Who are you?</label>
-    <select name="dummy_user" id="dummy_user" required>
-        <option value="" disabled selected>Select your name</option>
-        <option value="Anne">Anne</option>
-        <option value="Jack">Jack</option>
-        <option value="Cho">Cho</option>
-    </select>
-
-    <!-- User category selector -->
-    <label for="user_category">User category:</label>
-    <select name="user_category" id="user_category" required>
-        <option value="" disabled selected>Choose a user category</option>
-        <option value="child">Child</option>
-        <option value="non-techie">Non-techie adult</option>
-        <option value="techie">Techie adult</option>
-    </select>
-
-    <!-- User message -->
-    <textarea name="message" placeholder="Ask something..." rows="4" required></textarea>
-    <button type="submit">Send</button>
-</form>
-
-<!-- Show message/response after submit -->
-{% if user_message and bot_message %}
-<div style="border: 1px solid #ccc; padding: 1em; margin-top: 1em; background-color: #f9f9f9; border-radius: 5px;">
-    <div style="margin-bottom: 0.5em;">
-        <strong>You:</strong><br>
-        {{ user_message|linebreaksbr }}
-    </div>
-    <div>
-        <strong>Buddy:</strong><br>
-        {{ bot_message|linebreaksbr }}
-    </div>
-</div>
-{% endif %}
 
 {% endblock %}
-
-
