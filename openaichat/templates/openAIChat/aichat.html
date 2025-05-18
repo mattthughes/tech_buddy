@@ -72,28 +72,6 @@
           <div class="p-3">
             <form method="post">
               {% csrf_token %}
-              
-              <div class="row mb-3">
-                <div class="col">
-                  <label class="form-label" for="dummy_user">Who am I talking to?</label>
-                  <select class="form-select" name="dummy_user" id="dummy_user" required>
-                    <option value="" disabled selected>Select your name</option>
-                    <option value="Anne">Anne</option>
-                    <option value="Jack">Jack</option>
-                    <option value="Cho">Cho</option>
-                  </select>
-                </div>
-                <div class="col">
-                  <label class="form-label" for="user_category">What age group do you fall into?</label>
-                  <select class="form-select" name="user_category" id="user_category" required>
-                    <option value="" disabled selected>Choose a tech level</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                  </select>
-                </div>
-              </div>
-
               <div class="chat-input d-flex">
                 <input type="text" name="message" id="userInput" class="form-control me-2" placeholder="Type your message..." required>
                 <button type="submit" class="btn btn-success intro-button">Send</button>
