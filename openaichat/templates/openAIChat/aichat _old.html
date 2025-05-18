@@ -54,23 +54,20 @@
           
           <!-- Chat Display Area -->
           <div class="chat-box" id="chatBox">
-            {% if messages %}
-              {% for msg in messages %}
-                <div class="mb-3">
-                  <div class="alert alert-secondary">
-                    <strong>You:</strong><br>
-                    {{ msg.user_message|linebreaksbr }}
-                  </div>
-                  <div class="alert alert-success">
-                    <strong>Buddy:</strong><br>
-                    {{ msg.bot_message|linebreaksbr }}
-                  </div>
-                </div>
-              {% endfor %}
-            {% else %}
-              <p>No messages yet.</p>
+            <!-- Chat messages will appear here -->
+             {% if user_message and bot_message %}
+            <div class="mb-3">
+              <div class="alert alert-secondary">
+                <strong>You:</strong><br>
+                {{ user_message|linebreaksbr }}
+              </div>
+              <div class="alert alert-success">
+                <strong>Buddy:</strong><br>
+                {{ bot_message|linebreaksbr }}
+              </div>
+            </div>
             {% endif %}
-          </div>       
+          </div>        
 
           <div class="p-3">
             <form method="post">
