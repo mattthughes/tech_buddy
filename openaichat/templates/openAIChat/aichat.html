@@ -77,6 +77,10 @@
                 <button type="submit" class="btn btn-success intro-button">Send</button>
               </div>
             </form>
+            <form method="post" action="?end_chat=true">
+            {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Finish Conversation</button>
+            </form>
           </div>
         </div>
       </div>
