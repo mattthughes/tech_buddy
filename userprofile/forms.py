@@ -1,6 +1,6 @@
 from allauth.account.forms import SignupForm
 from django import forms
-from .models import TECH_LEVELS, UserProfile
+from .models import TECH_LEVELS, UserProfile, Family
 
 
 class CustomSignupForm(SignupForm):
@@ -20,11 +20,19 @@ class CustomSignupForm(SignupForm):
     last_name = forms.CharField(
         max_length=30,
         label="Last Name",
-        required=True)
+        required=True
+    )
+    family = forms.ModelChoiceField(
+        queryset=Family.objects.all(),
+        label="Family",
+        empty_label="Select a family",
+        required=True
+    )
     tech_level = forms.ChoiceField(
         choices=TECH_LEVELS,
         label="Tech Level",
-        required=True)
+        required=True
+    )
     date_of_birth = forms.DateField(
         label="Date of Birth",
         widget=forms.DateInput(attrs={'type': 'date'}),
@@ -45,8 +53,9 @@ class CustomSignupForm(SignupForm):
         user.save()
 
         profile, created = UserProfile.objects.get_or_create(user=user)
+        profile.family = self.cleaned_data['family']
         profile.tech_level = self.cleaned_data['tech_level']
         profile.dob = self.cleaned_data['date_of_birth']
-        profile.user_type = 'facilitator'  # Set default user_type
+        profile.user_type = 'facilitator'
         profile.save()
         return user
