@@ -13,6 +13,7 @@
     - [**Problem Statement**](#problem-statement)
     - [**Objective(s)**](#objectives)
     - [**Target Audience**](#target-audience)
+  - [**Wireframes**](#wireframes)
   - [**Features**](#features)
     - [**AI Integration**](#ai-integration)
     - [**User Authentication**](#user-authentication)
@@ -81,6 +82,8 @@ Tech Buddy aims to:
 * Primary: Elderly users
 * Secondary: Family members providing remote support
 * Tertiary: Anyone seeking quick tech assistance
+
+## **Wireframes**
 
 ## **Features**
 
@@ -218,10 +221,22 @@ python manage.py runserver
 * Icon + text combinations
 
 ### **Color Palette**
-[]
+
+* Primary Blue: #2196F3 (Used for buttons and interactive elements)
+* Light Blue: #d5e9f2 (Used for navigation background)
+* White: #fff (Used for backgrounds)
+* Light Gray: #ccc (Used for borders)
+* Black: #000000 (Used for text and borders)
+
+  
+- ThE color scheme creates a modern, professional look that's  
+   - Maintains good contrast for accessibility
+   - Uses a consistent blue theme throughout
+   - Keeps the interface clean and uncluttered  
+   - Easy on the eyes
 
 ### **Typography**
-[]
+Roboto, Arial, sans-serif
 
 ## **Future Development**
 
