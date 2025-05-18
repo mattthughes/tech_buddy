@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
@@ -65,8 +65,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'tech_buddy_project.urls'
 
 LOGIN_REDIRECT_URL = '/aichat/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/aichat/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
