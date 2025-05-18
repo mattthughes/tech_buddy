@@ -4,9 +4,9 @@ from datetime import date
 
 # Choices for tech level
 TECH_LEVELS = [
-    ("High", "High"),
-    ("Medium", "Medium"),
-    ("Low", "Low"),
+    ("high", "High"),
+    ("medium", "Medium"),
+    ("low", "Low"),
 ]
 
 
@@ -35,7 +35,11 @@ class UserProfile(models.Model):
         blank=True,
     )
     dob = models.DateField(null=True, blank=True)
-    tech_level = models.CharField(max_length=10, choices=TECH_LEVELS)
+    tech_level = models.CharField(
+        max_length=10,
+        choices=TECH_LEVELS,
+        default="low"
+    )
     user_type = models.CharField(
         max_length=20,
         choices=USER_TYPE_CHOICES,

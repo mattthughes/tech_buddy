@@ -1,17 +1,30 @@
-
 from allauth.account.forms import SignupForm
 from django import forms
 from .models import TECH_LEVELS, UserProfile
-from django.contrib.auth.models import User
+
 
 class CustomSignupForm(SignupForm):
     """
-    Create a form for users to register
+    Custom signup form for user registration.
     """
-    username = forms.CharField(max_length=150, label="User Name", required=True)
-    first_name = forms.CharField(max_length=30, label="First Name", required=True)
-    last_name = forms.CharField(max_length=30, label="Last Name", required=True)
-    tech_level = forms.ChoiceField(choices=TECH_LEVELS, label="Tech Level", required=True)
+    username = forms.CharField(
+        max_length=150,
+        label="User Name",
+        required=True
+    )
+    first_name = forms.CharField(
+        max_length=30,
+        label="First Name",
+        required=True
+    )
+    last_name = forms.CharField(
+        max_length=30,
+        label="Last Name",
+        required=True)
+    tech_level = forms.ChoiceField(
+        choices=TECH_LEVELS,
+        label="Tech Level",
+        required=True)
     date_of_birth = forms.DateField(
         label="Date of Birth",
         widget=forms.DateInput(attrs={'type': 'date'}),
@@ -34,5 +47,6 @@ class CustomSignupForm(SignupForm):
         profile, created = UserProfile.objects.get_or_create(user=user)
         profile.tech_level = self.cleaned_data['tech_level']
         profile.dob = self.cleaned_data['date_of_birth']
+        profile.user_type = 'facilitator'  # Set default user_type
         profile.save()
         return user

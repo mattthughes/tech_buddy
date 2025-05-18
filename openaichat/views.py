@@ -84,6 +84,7 @@ def ai_chat_view(request):
                     model="gpt-3.5-turbo",
                     messages=chat_history
                 )
+                print("DEBUG| OpenAI response object:", response)
                 bot_message_text = response.choices[0].message.content
 
                 # Save message
@@ -96,6 +97,8 @@ def ai_chat_view(request):
                 )
             except Exception as e:
                 bot_message_text = f"Error: {e}"
+
+    print("DEBUG| Final bot_message_text:", repr(bot_message_text))
 
     return render(request, "openAIChat/aichat.html", {
         "user_message": user_message_text,
