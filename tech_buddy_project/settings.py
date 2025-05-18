@@ -64,6 +64,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tech_buddy_project.urls'
 
+LOGIN_REDIRECT_URL = '/aichat/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/aichat/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -82,7 +86,6 @@ TEMPLATES = [
 ACCOUNT_FORMS = {
     'signup': 'userprofile.forms.CustomSignupForm',
 }
-
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
