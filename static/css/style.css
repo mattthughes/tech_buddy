@@ -188,6 +188,7 @@ h3 {
     margin: 0;
 }
 
+
 /* Chat room mobile styling */
 
 .conversation-list {
@@ -203,14 +204,12 @@ h3 {
     height: calc(50vh - 100px)
 }
 
-
-
 /*about page specific css*/
 
-.about-section {
+.about-section {    
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px auto;  
     padding: 1px
 }
 
@@ -239,7 +238,6 @@ h3 {
         max-width: 160px;
     }
 }
-
 
 
 /* Hide image on very small screens */

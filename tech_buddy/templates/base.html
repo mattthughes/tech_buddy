@@ -41,7 +41,7 @@
                         </li>
                         {% if user.is_authenticated and user.userprofile.user_type == 'facilitator' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'familymember:signup' %}">Signup family</a>
+                            <a class="nav-link" href="{% url 'familymember:signup_family_member' %}">Signup family</a>
                         </li>
                         {% endif %}
 

@@ -13,10 +13,10 @@
     {% endfor %}
   {% endif %}
 
-  <form method="post">
+  <form method="post" autocomplete="off">
     {% csrf_token %}
     {{ form.non_field_errors }}
-    
+
     <div class="mb-3">
       <label for="id_username" class="form-label">Username</label>
       {{ form.username }}
@@ -36,13 +36,13 @@
     </div>
 
     <div class="mb-3">
-      <label for="id_password1" class="form-label">Password</label>
+      <label for="id_password1" class="form-label">Initial Password</label>
       {{ form.password1 }}
       {{ form.password1.errors }}
     </div>
 
     <div class="mb-3">
-      <label for="id_password2" class="form-label">Confirm Password</label>
+      <label for="id_password2" class="form-label">Confirm Initial Password</label>
       {{ form.password2 }}
       {{ form.password2.errors }}
     </div>
