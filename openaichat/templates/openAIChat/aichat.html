@@ -20,7 +20,7 @@
           <h5>Your recent chats</h5>
           <ul>
             {% for convo in conversations %}
-              <li>
+              <li class="{% if convo.id == current_conversation_id %}active{% endif %}">
                 <a href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
                   {{ convo.title|default:"(untitled)" }}
                 </a>

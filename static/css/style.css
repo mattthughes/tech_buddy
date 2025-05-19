@@ -175,6 +175,14 @@ td:first-child {
     background-color: #f8f9fa;
     border-right: 1px solid #ddd;
 }
+
+.sidebar li.active {
+  background-color: #e6f3ff;
+  font-weight: bold;
+  border-left: 4px solid #007bff;
+  padding-left: 8px;
+}
+
 .chat-box {
     height: calc(78vh - 150px);
     overflow-y: auto;
@@ -188,4 +196,10 @@ td:first-child {
     padding: 20px;
     background: #f8f9fa;
     border-top: 1px solid #ddd;
+}
+
+.conversation-list li.active {
+    background-color: #e0f0ff;
+    font-weight: bold;
+    border-left: 4px solid #007bff;
 }
