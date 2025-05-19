@@ -307,7 +307,7 @@ Detailed testing information is available in [TESTING.md](TESTING.md)
 ## **Credit**
 - Team Support Squad
 - https://chatgpt.com/
-- 
+- Image bot generated from canvas
 
 
 
