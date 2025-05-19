@@ -186,6 +186,15 @@ h3 {
     margin: 0;
 }
 
+/*about page specific css*/
+
+.about-section {    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;  
+    padding: 1px
+}
+
 /* Responsive styles */
 @media (max-width: 700px) {
     .signup-login-container {
@@ -210,15 +219,6 @@ h3 {
         margin: 0 auto;
         max-width: 160px;
     }
-}
-
-/*about page specific css*/
-
-.about-section {    
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;  
-    padding: 1px
 }
 
 /* Hide image on very small screens */
