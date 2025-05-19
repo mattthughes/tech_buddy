@@ -15,24 +15,11 @@
     <div class="container-fluid" style="height: 80vh; overflow: hidden;">
       <div class="row">
 
-        <!-- Sidebar for History -->
-        <div class="col-3 sidebar p-3">
-          <h5>Your recent chats</h5>
-          <ul>
-            {% for convo in conversations %}
-              <li class="{% if convo.id == current_conversation_id %}active{% endif %}">
-                <a href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
-                  {{ convo.title|default:"(untitled)" }}
-                </a>
-              </li>
-            {% empty %}
-              <li>No conversations yet.</li>
-            {% endfor %}
-          </ul>
-        </div>
+       
+        
 
         <!-- Main Chat Area -->
-        <div class="col-9 position-relative">
+        <div class="col-12 col-xl-9 chat-room">
 
           <div class="p-3">
             <h4>You're in the <strong>Tech buddy</strong> chatroom</h4>
@@ -63,14 +50,29 @@
               {% csrf_token %}
               <div class="chat-input d-flex">
                 <input type="text" name="message" id="userInput" class="form-control me-2" placeholder="Type your message..." required>
-                <button type="submit" class="btn btn-success intro-button">Send</button>
+                <button type="submit" class="btn btn-success intro-button end-button">Send</button>
               </div>
             </form>
             <form method="post" action="?end_chat=true">
             {% csrf_token %}
-              <button type="submit" class="btn btn-danger">Finish Conversation</button>
+              <button type="submit" class="btn btn-danger end" style="margin-top: 20px;">End Chat</button>
             </form>
           </div>
+        </div>
+         <!-- Sidebar for History -->
+        <div class="col-12 col-xl-3 sidebar recent-chat p-3">
+          <h5>Your recent chats</h5>
+          <ul>
+            {% for convo in conversations %}
+              <li class="{% if convo.id == current_conversation_id %}active{% endif %}">
+                <a class="conversation-list" href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
+                  {{ convo.title|default:"(untitled)" }}
+                </a>
+              </li>
+            {% empty %}
+              <li>No conversations yet.</li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
