@@ -19,6 +19,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
+        <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg nav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Tech Buddy</a>
@@ -34,7 +35,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'aichat' %}">Chat with Buddy</a>
+                            <a class="nav-link" href="{% url 'aichat' %}"><i class="fa-solid fa-comment icon"></i>Chat with Buddy</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-circle-info icon"></i>About</a>
@@ -44,11 +45,12 @@
                             <a class="nav-link" href="{% url 'familymember:signup_family_member' %}">Signup family</a>
                         </li>
                         {% endif %}
-
+                        <!--Checking if the user is logged in-->
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket icon"></i>Logout</a>
                         </li>
+                        <!--Otherwise show the login and sign up icons-->
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}"><i class="fa-solid fa-right-to-bracket icon"></i>Login</a>
