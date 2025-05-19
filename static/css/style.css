@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+KR:wght@600&family=Russo+One&display=swap');
+
+/* font styles */
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+a {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2,
+h3 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
 /* Styling for Home Page */
 .nav {
     background-color: #d5e9f2;
@@ -20,8 +45,8 @@
     position: absolute;
     right: 20%;
     top: 5%;
-    margin-top: 15px;
-    
+    margin-top: 50px;
+
 }
 
 .common-questions-table {
@@ -31,17 +56,40 @@
     border: 1px solid;
     border-collapse: separate;
     border-spacing: 0 10px;
-    margin-top: 20px;
-}
-
-table {
+    margin-top: 60px;
     width: 50%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    font-family: sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-td:first-child {
-      border-right: 2px solid #000000;
-      border-left: 2px solid #000000;
-    }
+
+
+.common-questions-table thead tr {
+    background-color: #d5e9f2;
+    color: #000000;
+    text-align: left;
+}
+
+.common-questions-table th,
+.common-questions-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #000000;
+}
+
+.common-questions-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.common-questions-table tbody tr:last-of-type {
+    border-bottom: 2px solid #000000;
+}
+
+.common-questions-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
 
 /* Styling for signup-login form */
 .signup-login-container {
@@ -52,7 +100,7 @@ td:first-child {
     margin: 60px auto 0 auto;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
     padding: 40px 30px;
     gap: 48px;
 }
@@ -147,14 +195,17 @@ td:first-child {
         padding: 24px 8px;
         gap: 20px;
     }
+
     .signup-login-form-section {
         max-width: 100%;
         width: 100%;
     }
+
     .signup-login-image-section {
         width: 100%;
         justify-content: center;
     }
+
     .signup-login-image-section img {
         margin: 0 auto;
         max-width: 160px;
