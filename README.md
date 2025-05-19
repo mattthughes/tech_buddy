@@ -13,6 +13,9 @@
     - [**Problem Statement**](#problem-statement)
     - [**Objective(s)**](#objectives)
     - [**Target Audience**](#target-audience)
+  - [**Wireframes**](#wireframes)
+    - [Desktop Wireframes](#desktop-wireframes)
+    - [Mobile Wireframes](#mobile-wireframes)
   - [**Features**](#features)
     - [**AI Integration**](#ai-integration)
     - [**User Authentication**](#user-authentication)
@@ -45,9 +48,9 @@
     - [**Premium Features**](#premium-features)
     - [**Community Features**](#community-features)
   - [**Testing**](#testing)
-  - [**Contributing**](#contributing)
+  - [**Credit**](#credit)
   - [**Team**](#team)
-  - [**License**](#license)
+  
 
 ## **About the Project**
 
@@ -81,6 +84,31 @@ Tech Buddy aims to:
 * Primary: Elderly users
 * Secondary: Family members providing remote support
 * Tertiary: Anyone seeking quick tech assistance
+
+## **Wireframes**
+The project was planned and wireframes for desktop and mobile view was created;
+
+### Desktop Wireframes
+
+| Page | Screenshot |
+| --- | --- |
+| About | ![screenshot](staticfiles/images/about-desktop.png) |
+| History Page | ![screenshot](staticfiles/images/history-desktop.png) |
+| Login | ![screenshot](staticfiles/images/login-desktop.png) |
+| Question Conversation | ![screenshot](staticfiles/images/question-conversation-desktop.png) |
+| Questions | ![screenshot](staticfiles/images/questions-desktop.png) |
+| Register  | ![screenshot](staticfiles/images/register-desktop.png) |
+
+### Mobile Wireframes
+
+| Page | Screenshot |
+| --- | --- |
+| About | ![screenshot](staticfiles/images/about-mobile.png) |
+| History conversation | ![screenshot](staticfiles/images/history-conversation-mobile.png) |
+| History | ![screenshot](staticfiles/images/history-mobile.png) |
+| Home | ![screenshot](staticfiles/images/home-mobile.png) |
+| Question Page | ![screenshot](staticfiles/images/questions-mobile.png) |
+
 
 ## **Features**
 
@@ -218,10 +246,22 @@ python manage.py runserver
 * Icon + text combinations
 
 ### **Color Palette**
-[]
+
+* Primary Blue: #2196F3 (Used for buttons and interactive elements)
+* Light Blue: #d5e9f2 (Used for navigation background)
+* White: #fff (Used for backgrounds)
+* Light Gray: #ccc (Used for borders)
+* Black: #000000 (Used for text and borders)
+
+  
+- The color scheme creates a modern, professional look that's  
+   - Maintains good contrast for accessibility
+   - Uses a consistent blue theme throughout
+   - Keeps the interface clean and uncluttered  
+   - Easy on the eyes
 
 ### **Typography**
-[]
+Roboto, Arial, sans-serif
 
 ## **Future Development**
 
@@ -264,11 +304,19 @@ python manage.py runserver
 ## **Testing**
 Detailed testing information is available in [TESTING.md](TESTING.md)
 
-## **Contributing**
-[]
+## **Credit**
+- Team Support Squad
+- https://chatgpt.com/
+- 
+
+
 
 ## **Team**
-[]
 
-## **License**
-[]
+- Matthew Aitken - https://github.com/apeskinian
+- Charle - https://github.com/Charlie9009
+- Mildred Aneke - https://github.com/mildred-prog
+- Jaime Hyland - https://github.com/JaimeHyland
+- Matt Hughes - https://github.com/mattthughes
+- Mubashir - https://github.com/Mubashirgit1
+- Pedro - https://github.com/PedroS-Studies
