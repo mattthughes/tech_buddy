@@ -4,82 +4,79 @@
 
 {% block content %}
 
-  {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} mt-2">
-        {{ message }}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} mt-2">
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="container-fluid" style= "overflow: hidden;">
+  <div class="row">
+    <!-- Main Chat Area -->
+    <div class="col-12 col-xl-9 chat-room">
+
+      <div class="p-3">
+        <h4>You're in the <strong>Tech buddy</strong> chatroom</h4>
       </div>
-    {% endfor %}
-  {% endif %}
 
-    <div class="container-fluid" style="height: 80vh; overflow: hidden;">
-      <div class="row">
-
-       
-        
-
-        <!-- Main Chat Area -->
-        <div class="col-12 col-xl-9 chat-room">
-
-          <div class="p-3">
-            <h4>You're in the <strong>Tech buddy</strong> chatroom</h4>
+      <!-- Chat Display Area -->
+      <div class="chat-box overflow-auto" id="chatBox">
+        {% if chat_messages %}
+        {% for msg in chat_messages %}
+        <div class="mb-3">
+          <div class="alert alert-secondary">
+            <strong>You:</strong><br>
+            {{ msg.user_message|linebreaksbr }}
           </div>
-          
-          <!-- Chat Display Area -->
-          <div class="chat-box" id="chatBox">
-            {% if chat_messages %}
-              {% for msg in chat_messages %}
-                <div class="mb-3">
-                  <div class="alert alert-secondary">
-                    <strong>You:</strong><br>
-                    {{ msg.user_message|linebreaksbr }}
-                  </div>
-                  <div class="alert alert-success">
-                    <strong>Buddy:</strong><br>
-                    {{ msg.bot_message|linebreaksbr }}
-                  </div>
-                </div>
-              {% endfor %}
-            {% else %}
-              <p>No messages yet.</p>
-            {% endif %}
-          </div>       
-
-          <div class="p-3">
-            <form method="post" action="{% url 'aichat' %}">
-              {% csrf_token %}
-              <div class="chat-input d-flex">
-                <input type="text" name="message" id="userInput" class="form-control me-2" placeholder="Type your message..." required>
-                <button type="submit" class="btn btn-success intro-button end-button">Send</button>
-              </div>
-            </form>
-            <form method="post" action="?end_chat=true">
-            {% csrf_token %}
-              <button type="submit" class="btn btn-danger end" style="margin-top: 20px;">End Chat</button>
-            </form>
+          <div class="alert alert-success">
+            <strong>Buddy:</strong><br>
+            {{ msg.bot_message|linebreaksbr }}
           </div>
         </div>
-         <!-- Sidebar for History -->
-        <div class="col-12 col-xl-3 sidebar recent-chat p-3">
-          <h5>Your recent chats</h5>
-          <ul>
-            {% for convo in conversations %}
-              <li class="{% if convo.id == current_conversation_id %}active{% endif %}">
-                <a class="conversation-list" href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
-                  {{ convo.title|default:"(untitled)" }}
-                </a>
-              </li>
-            {% empty %}
-              <li>No conversations yet.</li>
-            {% endfor %}
-          </ul>
-        </div>
+        {% endfor %}
+        {% else %}
+        <p>No messages yet.</p>
+        {% endif %}
+      </div>
+
+      <div class="p-3">
+        <form method="post" action="{% url 'aichat' %}">
+          {% csrf_token %}
+          <div class="chat-input  d-flex">
+            <input type="text" name="message" id="userInput" class="form-control me-2"
+              placeholder="Type your message..." required>
+            <button type="submit" class="btn btn-success intro-button">Send</button>
+          </div>
+        </form>
+        <form method="post" action="?end_chat=true">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger end" style="margin-top: 20px;">End Chat</button>
+        </form>
       </div>
     </div>
-    <script>
-      const chatBox = document.getElementById("chatBox");
-      if (chatBox) {
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-    </script>
+    <!-- Sidebar for History -->
+    <div class="col-12 col-xl-3 sidebar recent-chat p-3" style="overflow: auto;">
+      <h5>Your recent chats</h5>
+      <ul>
+        {% for convo in conversations %}
+        <li class="{% if convo.id == current_conversation_id %}active{% endif %}">
+          <a class="conversation-list" href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
+            {{ convo.title|default:"(untitled)" }}
+          </a>
+        </li>
+        {% empty %}
+        <li>No conversations yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  const chatBox = document.getElementById("chatBox");
+  if (chatBox) {
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
 {% endblock %}
