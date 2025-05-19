@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xl-4 d-flex flex-column ps-4">
+        <div class="col-12 col-xl-5 d-flex flex-column ps-4">
             <img class="border pt-1" alt="robot" src="{% static 'images/robot.png' %}">
             <div class="d-flex flex-column align-items-center m-2">
                 {% if user.is_authenticated %}
@@ -21,51 +21,60 @@
                 {% endif %}
             </div>
         </div>
+        <div class="d-none d-xl-block col-xl-5 ">
+            <h2 class="common-questions-header">Common Questions</h2>
+            <table class="common-questions-table styled-table">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>How do I reset my Wifi?</td>
+                        <td>Unplug your router for 30 seconds to restart it, or hold the reset button for 10–30 seconds
+                            to erase all
+                            settings and fully reset it..</td>
+                    </tr>
+                    <tr>
+                        <td>How do I download Facebook?</td>
+                        <td>Download Facebook by searching "Facebook" in the App Store (iOS) or Google Play Store
+                            (Android) and
+                            tapping Install.</td>
+                    </tr>
+                    <tr>
+                        <td>How do I reset my TV?</td>
+                        <td>To reset your TV, go to Settings > System > Reset (or Factory Reset) and follow the
+                            on-screen
+                            instructions.</td>
+                    </tr>
+
+                    <tr>
+                        <td>How do I check if an Email is Spam?</td>
+                        <td>You can identify a spam email by checking for suspicious sender addresses, poor grammar,
+                            urgent or
+                            too-good-to-be-true messages, and unexpected attachments or links..</td>
+                    </tr>
+
+                    <tr>
+                        <td>What does Malware do?</td>
+                        <td>Malware is malicious software designed to damage, disrupt, or gain unauthorized access to
+                            computer
+                            systems, networks, or data.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Should I be worried about my online privacy?</td>
+                        <td>You should be concerned about your online privacy because your personal information can be
+                            tracked,
+                            shared, or exploited without your consent.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-<h2 class="d-none d-xl-block common-questions-header">Common Questions</h2>
-<table class="d-none d-xl-block common-questions-table styled-table">
-    <thead>
-        <tr>
-            <th>Question</th>
-            <th>Answer</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>How do I reset my Wifi?</td>
-            <td>Unplug your router for 30 seconds to restart it, or hold the reset button for 10–30 seconds to erase all
-                settings and fully reset it..</td>
-        </tr>
-        <tr>
-            <td>How do I download Facebook?</td>
-            <td>Download Facebook by searching "Facebook" in the App Store (iOS) or Google Play Store (Android) and
-                tapping Install.</td>
-        </tr>
-        <tr>
-            <td>How do I reset my TV?</td>
-            <td>To reset your TV, go to Settings > System > Reset (or Factory Reset) and follow the on-screen
-                instructions.</td>
-        </tr>
 
-        <tr>
-            <td>How do I check if an Email is Spam?</td>
-            <td>You can identify a spam email by checking for suspicious sender addresses, poor grammar, urgent or
-                too-good-to-be-true messages, and unexpected attachments or links..</td>
-        </tr>
-
-        <tr>
-            <td>What does Malware do?</td>
-            <td>Malware is malicious software designed to damage, disrupt, or gain unauthorized access to computer
-                systems, networks, or data.</td>
-        </tr>
-
-        <tr>
-            <td>Should I be worried about my online privacy?</td>
-            <td>You should be concerned about your online privacy because your personal information can be tracked,
-                shared, or exploited without your consent.</td>
-        </tr>
-    </tbody>
-</table>
 {% endblock %}
