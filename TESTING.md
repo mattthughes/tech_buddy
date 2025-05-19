@@ -1,141 +1,17 @@
 # **TESTING**
 
-## **Table of Contents**
-* [**Code Validation**](#code-validation)
-    + [**Python**](#python)
-    + [**Django Templates**](#django-templates)
-* [**Unit Testing**](#unit-testing)
-    + [**User Profile Tests**](#user-profile-tests)
-    + [**OpenAI Chat Tests**](#openai-chat-tests)
-    + [**Authentication Tests**](#authentication-tests)
-* [**Integration Testing**](#integration-testing)
-* [**Manual Testing**](#manual-testing)
-    + [**User Profile Features**](#user-profile-features)
-    + [**Chat Interface**](#chat-interface)
-    + [**Authentication Flow**](#authentication-flow)
-* [**Security Testing**](#security-testing)
+The following testing has been carried out.
 
 ## **Code Validation**
 
 ### **Python**
-- All Python files follow PEP8 guidelines
-- Code validation tools used:
-  - Flake8 for code style checking
-  - Black for code formatting
-  - isort for import sorting
-- Key files validated:
-  - `userprofile/models.py`
-  - `userprofile/forms.py`
-  - `openaichat/views.py`
-  - `openaichat/models.py`
 
-### **Django Templates**
-- Templates validated for proper syntax
-- Template inheritance properly implemented
-- All template tags and filters used correctly
-- Key template directories:
-  - `templates/account/`
-  - `templates/usersessions/`
-  - `templates/openaichat/`
+We have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate the following Python files.
 
-## **Unit Testing**
-
-### **User Profile Tests**
-- Profile model tests
-  - User profile creation
-  - Profile field validation
-  - Profile update functionality
-- Form validation tests
-  - User profile form validation
-  - Required field validation
-  - Custom field validation
-
-### **OpenAI Chat Tests**
-- Chat model tests
-  - Message creation and storage
-  - Chat session management
-- View tests
-  - Chat message processing
-  - API response handling
-  - Error handling
-
-### **Authentication Tests**
-- User registration
-- Login functionality
-- Password reset
-- Social authentication
-- Session management
-
-## **Integration Testing**
-- User profile and chat integration
-  - Profile updates affecting chat sessions
-  - User preferences in chat interface
-- Authentication and user profile integration
-  - Profile creation during registration
-  - Profile updates during authentication
-- Database integration
-  - Data consistency across models
-  - Foreign key relationships
-  - Cascade operations
-
-## **Manual Testing**
-
-### **User Profile Features**
-- Profile creation and editing
-- Profile picture upload
-- User preferences settings
-- Profile visibility settings
-
-### **Chat Interface**
-- Message sending and receiving
-- Chat history display
-- Message formatting
-- Error message display
-- Loading states
-- API response handling
-
-### **Authentication Flow**
-- Registration process
-- Login process
-- Password reset
-- Social authentication
-- Session management
-- Logout functionality
-
-## **Security Testing**
-- Authentication security
-  - Password hashing
-  - Session management
-  - CSRF protection
-- API security
-  - OpenAI API key protection
-  - Rate limiting
-  - Request validation
-- Data security
-  - User data protection
-  - Sensitive information handling
-  - Database security
-
-## **Performance Testing**
-- Chat response time
-- Profile page load time
-- Database query optimization
-- API response time
-- Resource usage monitoring
-
-## **Browser Compatibility**
-- Tested on:
-  - Chrome (latest)
-  - Firefox (latest)
-  - Edge (latest)
-- Responsive design testing
-  - Mobile devices
-  - Tablets
-  - Desktop browsers
-
-## **Error Handling**
-- Form validation errors
-- API error responses
-- Database error handling
-- Network error handling
-- User feedback for errors
+| Directory | File | URL | Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| tech_buddy_project | [settings.py](tech_buddy_project/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/tech_buddy/main/tech_buddy_project/settings.py) | ![settings.py](documentation/validation/python/valid_settings.png) | All clear, no errors found. |
+| tech_buddy | [urls.py](tech_buddy/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/tech_buddy/main/tech_buddy/urls.py) | ![settings.py](documentation/validation/python/tech_buddy_urls.png) | All clear, no errors found. |
+| tech_buddy | [views.py](tech_buddy/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/tech_buddy/main/tech_buddy/views.py) | ![settings.py](documentation/validation/python/tech_buddy_views.png) | All clear, no errors found. |
+| openaichat | [models.py](openaichat/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/tech_buddy/main/openaichat/models.py) | ![settings.py](documentation/validation/python/openaichat_models.png) | All clear, no errors found. |
+| openaichat | [views.py](openaichat/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/apeskinian/tech_buddy/main/openaichat/views.py) | ![settings.py](documentation/validation/python/openaichat_views.png) | All clear, no errors found. |
