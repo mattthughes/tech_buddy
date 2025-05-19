@@ -38,16 +38,32 @@ def ai_chat_view(request):
         request.session.pop("conversation_id", None)
         return redirect("aichat")
 
-    # Retrieve existing conversation
-    conversation_id = request.session.get("conversation_id")
-    if conversation_id:
+    requested_convo_id = request.GET.get("conversation_id")
+    if requested_convo_id:
         try:
             conversation = Conversation.objects.get(
-                id=conversation_id,
+                id=requested_convo_id,
                 user_profile=user_profile
             )
+            request.session["conversation_id"] = conversation.id
         except Conversation.DoesNotExist:
             conversation = None
+            request.session.pop("conversation_id", None)
+
+        return redirect("aichat")
+
+    else:
+        # Retrieve existing conversation
+        conversation_id = request.session.get("conversation_id")
+        if conversation_id:
+            try:
+                conversation = Conversation.objects.get(
+                    id=conversation_id,
+                    user_profile=user_profile
+                )
+                request.session["conversation_id"] = conversation.id
+            except Conversation.DoesNotExist:
+                conversation = None
 
     # Handle the POST request (user submits a message)
     if request.method == "POST":
