@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Sign Up a Family Member</h2>
+  <p class="text-muted">Enter the details of your family member below.</p>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    <div class="mb-3">
+      <label for="id_username" class="form-label">Username</label>
+      {{ form.username }}
+      {{ form.username.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_first_name" class="form-label">First Name</label>
+      {{ form.first_name }}
+      {{ form.first_name.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_last_name" class="form-label">Last Name</label>
+      {{ form.last_name }}
+      {{ form.last_name.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_password1" class="form-label">Password</label>
+      {{ form.password1 }}
+      {{ form.password1.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_password2" class="form-label">Confirm Password</label>
+      {{ form.password2 }}
+      {{ form.password2.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_dob" class="form-label">Date of Birth</label>
+      {{ form.dob }}
+      {{ form.dob.errors }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_tech_level" class="form-label">Tech Level</label>
+      {{ form.tech_level }}
+      {{ form.tech_level.errors }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Family Member</button>
+  </form>
+</div>
+{% endblock %}
