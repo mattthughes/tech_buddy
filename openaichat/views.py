@@ -5,6 +5,7 @@ from .models import Conversation, Message
 from userprofile.models import UserProfile
 from django.utils.text import Truncator
 from django.contrib.auth.decorators import login_required
+from django.db.models import Max
 import os
 
 load_dotenv()
@@ -20,31 +21,51 @@ def ai_chat_view(request):
     bot_message_text = None
     conversation = None
 
-    # 3. Get UserProfile or redirect to home with a message
+    # Get UserProfile or redirect to home with a message
     try:
         user_profile = UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
-        # Ideally add a message here like: messages.warning(...)
+        # add a message here like: messages.warning(...)
         return redirect("home")  # Fallback instead of 'profile_setup'
 
-    # 4. Handle "end chat" action
+    conversations = Conversation.objects.filter(user_profile=user_profile) \
+        .annotate(last_message_time=Max("messages__timestamp")) \
+        .order_by('-last_message_time')
+
+    # Handle "end chat" action
     if request.method == "POST" and request.GET.get("end_chat") == "true":
         print("DEBUG| Ending conversation and clearing session.")
         request.session.pop("conversation_id", None)
         return redirect("aichat")
 
-    # 5. Try to retrieve an existing conversation
-    conversation_id = request.session.get("conversation_id")
-    if conversation_id:
+    requested_convo_id = request.GET.get("conversation_id")
+    if requested_convo_id:
         try:
             conversation = Conversation.objects.get(
-                id=conversation_id,
+                id=requested_convo_id,
                 user_profile=user_profile
             )
+            request.session["conversation_id"] = conversation.id
         except Conversation.DoesNotExist:
             conversation = None
+            request.session.pop("conversation_id", None)
 
-    # 6. Handle POST (user submits a message)
+        return redirect("aichat")
+
+    else:
+        # Retrieve existing conversation
+        conversation_id = request.session.get("conversation_id")
+        if conversation_id:
+            try:
+                conversation = Conversation.objects.get(
+                    id=conversation_id,
+                    user_profile=user_profile
+                )
+                request.session["conversation_id"] = conversation.id
+            except Conversation.DoesNotExist:
+                conversation = None
+
+    # Handle the POST request (user submits a message)
     if request.method == "POST":
         user_message_text = request.POST.get("message", "").strip()
         print(f"DEBUG| user_message_text: {repr(user_message_text)}")
@@ -54,7 +75,7 @@ def ai_chat_view(request):
             bot_message_text = "Please enter a message to send."
             return redirect("aichat")
 
-        # 7. If no conversation exists, create a new one with title
+        # If no conversation exists, create a new one with a title
         if not conversation:
             print("DEBUG| Creating new conversation...")
             title_prompt = (
@@ -87,7 +108,7 @@ def ai_chat_view(request):
 
         print(f"DEBUG| Processing message in Conversation {conversation.id}")
 
-        # 8. Determine tone
+        # Determine the tone of AI's answers
         if user_profile.age is not None and user_profile.age < 16:
             tone = f"Explain like I'm a {user_profile.age}-year-old."
         else:
@@ -101,7 +122,7 @@ def ai_chat_view(request):
                         "and technically detailed way."
                         )
 
-        # 9. Build conversation history
+        # Build conversation history
         chat_history = [{
             "role": "system",
             "content": "You are a helpful assistant."
@@ -152,4 +173,6 @@ def ai_chat_view(request):
         "chat_messages": chat_messages,
         "user_message": user_message_text,
         "bot_message": bot_message_text,
+        "conversations": conversations,
+        "current_conversation_id": conversation.id if conversation else None,
     })
