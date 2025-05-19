@@ -39,13 +39,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-circle-info icon"></i>About</a>
                         </li>
+                        {% if user.is_authenticated and user.userprofile.user_type == 'facilitator' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'familymember:signup' %}">Signup family</a>
+                        </li>
+                        {% endif %}
 
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket icon"></i>Logout</a>
                         </li>
                         {% else %}
-
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}"><i class="fa-solid fa-right-to-bracket icon"></i>Login</a>
                         </li>
