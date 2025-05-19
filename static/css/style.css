@@ -227,7 +227,7 @@ h3 {
     border-right: 1px solid #ddd;
 }
 .chat-box {
-    height: calc(78vh - 150px);
+    height: calc(70vh - 150px);
     overflow-y: auto;
     padding: 20px;
     background-color: #fff;
