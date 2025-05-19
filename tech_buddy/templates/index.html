@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xl-5 d-flex flex-column ps-4">
+        <div class="col-12 col-xxl-5 d-flex flex-column ps-4">
             <img class="border pt-1" alt="robot" src="{% static 'images/robot.png' %}">
             <div class="d-flex flex-column align-items-center m-2">
                 {% if user.is_authenticated %}
@@ -21,7 +21,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="d-none d-xl-block col-xl-5 ">
+        <div class="d-none d-xxl-block col-xxl-5 overflow-hidden">
             <h2 class="common-questions-header">Common Questions</h2>
             <table class="common-questions-table styled-table">
                 <thead>
