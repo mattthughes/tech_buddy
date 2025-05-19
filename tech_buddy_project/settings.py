@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'openaichat',
     'userprofile',
+    'familymember',
     'allauth',
     'allauth.account',
 ]
