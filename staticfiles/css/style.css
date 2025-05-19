@@ -41,6 +41,8 @@ h3 {
     height: fit-content;
 }
 
+/* Common Questions mobile styling */
+
 .common-questions-header {
     position: absolute;
     right: 20%;
@@ -186,12 +188,38 @@ h3 {
     margin: 0;
 }
 
+<<<<<<< HEAD
+/* Chat room mobile styling */
+
+.conversation-list {
+    color: #000000;
+    text-decoration: none;
+}
+
+.conversation-list:hover {
+    color: #007bff;
+}
+
+.chat-box {
+    height: calc(50vh - 100px)
+}
+
+
+
+/*about page specific css*/
+
+.about-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+=======
 /*about page specific css*/
 
 .about-section {    
     width: 100%;
     max-width: 1200px;
     margin: 0 auto 40px auto;  
+>>>>>>> 1ea6fbe4d5a36f80a255d605b99f2a6f7ea92bcb
     padding: 1px
 }
 
@@ -221,6 +249,8 @@ h3 {
     }
 }
 
+
+
 /* Hide image on very small screens */
 @media (max-width: 480px) {
     .signup-login-image-section {
@@ -228,38 +258,47 @@ h3 {
     }
 }
 
-/* Styles for */
-.sidebar {
-    height: 100vh;
-    overflow-y: auto;
-    background-color: #f8f9fa;
-    border-right: 1px solid #ddd;
+@media (min-width:1200px) {
+
+    .recent-chat {
+        position: absolute;
+    }
+
+    .sidebar {
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+        border-right: 1px solid #ddd;
+    }
+
+    .sidebar li.active {
+        background-color: #e6f3ff;
+        font-weight: bold;
+        border-left: 4px solid #007bff;
+        padding-left: 8px;
+    }
+
+    .chat-room {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 25%;
+    }
+
+    .chat-box {
+        height: calc(70vh - 150px);
+        overflow-y: auto;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .chat-input {
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #ddd;
+    }
+
 }
 
-.sidebar li.active {
-  background-color: #e6f3ff;
-  font-weight: bold;
-  border-left: 4px solid #007bff;
-  padding-left: 8px;
-}
-
-.chat-box {
-    height: calc(70vh - 150px);
-    overflow-y: auto;
-    padding: 20px;
-    background-color: #fff;
-}
-
-.chat-input {
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
-    background: #f8f9fa;
-    border-top: 1px solid #ddd;
-}
-
-.conversation-list li.active {
-    background-color: #e0f0ff;
-    font-weight: bold;
-    border-left: 4px solid #007bff;
-}
