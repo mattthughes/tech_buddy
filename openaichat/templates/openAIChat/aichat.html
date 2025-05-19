@@ -17,13 +17,17 @@
 
         <!-- Sidebar for History -->
         <div class="col-3 sidebar p-3">
-          <h5>Chat History</h5>
-          <ul class="list-group" id="historyList">
-            <li class="list-group-item">Who are you?</li>
-            <li class="list-group-item">What is AI?</li>
-            <li class="list-group-item">How do I reset my password?</li>
-            <li class="list-group-item">What’s the weather today?</li>
-            <li class="list-group-item">Can you tell me a joke?</li>
+          <h5>Your recent chats</h5>
+          <ul>
+            {% for convo in conversations %}
+              <li>
+                <a href="{% url 'aichat' %}?conversation_id={{ convo.id }}">
+                  {{ convo.title|default:"(untitled)" }}
+                </a>
+              </li>
+            {% empty %}
+              <li>No conversations yet.</li>
+            {% endfor %}
           </ul>
         </div>
 
