@@ -5,8 +5,214 @@
 {% block title %}About the Project{% endblock %}
 
 {% block content %}
-<h2>Testing</h2>
-<p>Hello World!</p>
-
-
+<!--To copy in final project-->    
+        <section class="about-section mt-3">
+            <h1>About Tech-Buddy and the Team behind it</h1>
+            <!-- Start placeholder text -->
+            <h2>About Tech-Buddy</h2>
+            <p>
+            We all have that one relative (maybe a parent or grandparent) who calls when something isn’t working on their phone, laptop, or TV. Tech Buddy is the Support Squad's answer to make that experience easier for everyone.
+            </p>
+            <p>
+            It’s a simple, AI-powered web app where family members—especially elderly ones—can type out their tech problems in everyday language. Whether it’s “Can you fix my phone? It’s not charging.” “How do I transfer money on this app?” or “How do I reset my password?” Tech Buddy gives them instant, easy-to-follow help.
+            </p>
+            <p>
+            Support Squad designed this to feel personal, clear, and approachable. It’s like having a patient tech-savvy friend available 24/7, without needing to make a call or wait for someone to stop by. And for peace of mind, family members can still get updates or stay connected.
+            </p>
+            <p>
+            Tech Buddy was created with real people in mind — especially those who didn’t grow up with technology but still need to use it every day. Here’s what we hope to achieve with this project:
+            </p>
+            <ul>
+                <li>
+                - Give confidence to non-technical users: We want users to feel empowered, not intimidated, when facing a tech issue. With clear, simple explanations, they can troubleshoot problems on their own without feeling overwhelmed or helpless.
+                </li>
+                <li>
+                - Lighten the load on tech-savvy family members: Tech support from loved ones is usually just a call away but it can be stressful for both sides. Tech Buddy offers a gentle, always-available alternative that helps reduce pressure while keeping the support system in place.
+                </li>
+                <li>
+                - Make tech help feel friendly, personal, and easy to understand: No tech jargon. No complicated steps. Just straightforward, human-centered assistance. We want users to feel like they’re chatting with a patient, knowledgeable friend not reading from a manual.
+                </li>
+                <li>
+                - Integrate AI gently, so it supports users without overwhelming them: Tech Buddy uses AI to generate custom responses that are clear, helpful, and respectful of the user's experience level. The goal isn’t just to “answer a question,” but to offer guidance that feels human.
+                </li>
+            </ul>            
+            <h2>The Tech-Buddy Team</h2>
+                <!-- Start Bootstrap grid 2 -->
+                <div class="container text-center grid-testing"">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'images/matthew.png' %}" class="rounded-img" alt="Matt Aitken, Scrum Master">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Matthew Aitken</h5>
+                                <p class="card-text">Scrum Master</p>
+                                <div>
+                                    <a href="https://github.com/apeskinian/" target="_blank" rel="noopener" aria-label="Matthew Aitken on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/apeskinian/" target="_blank" rel="noopener" aria-label="Matthew Aitken on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Repository Manager</li>
+                                            <li>Backend/Frontend contributions</li>
+                                            <li>Project Manager</li>
+                                            <li>Django</li>
+                                            <li>Databases</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">                        
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/charlie.png' %}" class="rounded-img" alt="Charlie Gustafsson, team-member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Charlie Gustafsson</h5>
+                                <p class="card-text">Backend software development</p>
+                                <div>
+                                    <a href="https://github.com/Charlie9009" target="_blank" rel="noopener" aria-label="Charlie Gustafsson on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/charliegustafsson/" target="_blank" rel="noopener" aria-label="Charlie Gustafsson on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Testing</li>
+                                            <li>Django</li>
+                                            <li>Structured forms.py for userprofile</li>
+                                            <li>Set up allauth</li>
+                                            <li>Templates login, signup, logout</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/jaime.png' %}" class="rounded-img" alt="Jaime Hyland, team-member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jaime Hyland</h5>
+                                <p class="card-text">Backend software development</p>
+                                <div>
+                                    <a href="https://github.com/JaimeHyland" target="_blank" rel="noopener" aria-label="Jaime Hyland on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/language-landscapes/" target="_blank" rel="noopener" aria-label="Jaime Hyland on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Databases</li>
+                                            <li>AI tuning</li>
+                                            <li>Django</li>
+                                            <li>HTML</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/mildred.png' %}" class="rounded-img" alt="Mildred Aneke, Team Member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Mildred Aneke</h5>
+                                <p class="card-text">Backend software development</p>
+                                <div>
+                                    <a href="https://github.com/mildred-prog" target="_blank" rel="noopener" aria-label="Mildred Aneke on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/mildred-aneke-3920241b8/" target="_blank" rel="noopener" aria-label="Mildred Aneke on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Django</li>
+                                            <li>User authentication</li>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>README</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/matt_hughes.png' %}" class="rounded-img" alt="Matthew Hughes, Team Member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Matthew Hughes</h5>
+                                <p class="card-text">Frontend software development</p>
+                                <div>
+                                    <a href="https://github.com/mattthughes" target="_blank" rel="noopener" aria-label="Matthew Hughes on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/matthew-hughes-37a3291b8/" target="_blank" rel="noopener" aria-label="Matthew Hughes on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Bootstrap</li>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>Wireframes</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/mubashir.png' %}" class="rounded-img" alt="Mubashir Hussain, Team Member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Mubashir Hussain</h5>
+                                <p class="card-text">Frontend software development</p>
+                                <div>
+                                    <a href="https://github.com/Mubashirgit1" target="_blank" rel="noopener" aria-label="Mubashir Hussain on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/mubashirtech" target="_blank" rel="noopener" aria-label="Mubashir Hussain on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Bootstrap</li>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl d-flex justify-content-center mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static '/images/pedro.png' %}" class="rounded-img" alt="Pedro Svaetichin, Team Member">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Pedro Svaetichin</h5>
+                                <p class="card-text">Frontend software development</p>
+                                <div>
+                                    <a href="https://github.com/Mubashirgit1" target="_blank" rel="noopener" aria-label="Pedro Svaetichin on GitHub - opens in a new tab"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/pekka-svaetichin/" target="_blank" rel="noopener" aria-label="Pedro Svaetichin on LinkedIn - opens in a new tab"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="text-left !important">
+                                    <details>                           
+                                        <summary><strong>Contributions:</strong></summary>
+                                        <ul style="list-style-type: none;">
+                                            <li>Bootstrap</li>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>Presentation</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Bootsrap grid 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f4a03cae22.js" crossorigin="anonymous"></script>
+</section>
 {% endblock %}
