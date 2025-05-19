@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Error 404: Page not found!{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <h1 class="d-none">Error 404 - Page not found!</h1>
+                <div class="text-center mb-4">
+                    <img src="{% static '/images/buddy_404.png' %}" alt="buddy 400 error" class="w-50">
+                </div>
+                <h2 class="text-center mb-3">Oops looks like Buddy can't find this page!</h2>
+                <p class="text-center">Click <a href="{% url 'home' %}" class="text-black">here</a> to get back to the homepage.</p>
+            </div>
+        </div>
+    </div>    
+{% endblock %}
