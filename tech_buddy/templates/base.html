@@ -37,7 +37,7 @@
                             <a class="nav-link" href="{% url 'aichat' %}">Chat with Buddy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-info icon"></i>About</a>
+                            <a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-circle-info icon"></i>About</a>
                         </li>
                         {% if user.is_authenticated and user.userprofile.user_type == 'facilitator' %}
                         <li class="nav-item">

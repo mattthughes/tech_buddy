@@ -212,6 +212,15 @@ h3 {
     }
 }
 
+/*about page specific css*/
+
+.about-section {    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;  
+    padding: 1px
+}
+
 /* Hide image on very small screens */
 @media (max-width: 480px) {
     .signup-login-image-section {
